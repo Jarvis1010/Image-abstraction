@@ -29,7 +29,7 @@ app.get('/api/imagesearch/:img?',function(req,res){
     request.post({url:reqURL, 
         headers: {'Content-Type': 'multipart/form-data',
                 'Host':'api.cognitive.microsoft.com',
-                'Ocp-Apim-Subscription-Key':'27717d9bc057421b84edf63d8f6684f0'}},
+                'Ocp-Apim-Subscription-Key':process.env.BINGKEY}},
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 var results=JSON.parse(body);
